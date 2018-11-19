@@ -1,0 +1,15 @@
+<libros>
+<libro numero="01" descatalogado="no">
+<titulo>"Crónica de una muerte anunciada"</titulo>
+<autor>"Gabriel García Márquez"</autor>
+<editorial existeAun="si">"Alfaguara"</editorial>
+<precio descuento="no">9'90</precio>
+</libro>
+<libro numero="43" descatalogado="si">
+  <titulo>"Sufro Bucho"</titulo>
+  <autor>"Millán Salcedo"</autor>
+  <editorial existeAun="no">"Temas de Hoy"</editorial>
+  <precio descuento="si" cantidad="50%">4'90</precio>
+</libro>
+<libro/>
+</libros>
