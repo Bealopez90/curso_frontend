@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Condicionales</h1>
+  </body>
+  <script type="text/javascript">
+    var age=parseInt(prompt("Dime tu edad:"));
+    var isAdult= age>30;
+    var isYoung=age>18 && age<=30;
+    if (isAdult==true){
+      alert("Es mayor");
+    }
+    else if(isYoung==true){
+      alert("Es joven");
+    }
+    else{
+      if(age<3){
+        alert("Es un bebé");
+      }
+      else{
+        alert("Es un niño");
+      }
+    }
+  </script>
+</html>
