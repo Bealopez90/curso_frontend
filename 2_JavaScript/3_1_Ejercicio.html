@@ -5,28 +5,110 @@
     <title>Cuenta atr&aacute;s</title>
   </head>
   <body>
-    <h1>BIEN HECHO</h1>
+    <h1>FIN</h1>
   </body>
   <script type="text/javascript">
-    var foo=parseInt(prompt("¿Desde dónde la cuenta?"));
+  /*  var foo=parseInt(prompt("¿Desde dónde la cuenta?"));
     var bar=parseInt(prompt("¿Hasta dónde?"));
     var baz=parseInt(prompt("¿Y cuántas veces?"));
     var count=1;
     if(foo!=bar){
       while(count<=baz){
         if(foo>bar){
-          alert("Cuenta:"+foo);
-          foo=foo-1;
+          if(baz>(foo-bar)){
+            alert("Error: Has solicitado contar demasiados números");
+            break;
+          }
+          else{
+            alert("Cuenta:"+foo);
+            foo=foo-1;
+          }
         }
         else if(foo<bar){
-          alert("Cuenta:"+foo);
-          foo=foo+1;
+          if(baz>(bar-foo)){
+            alert("Error: Has solicitado contar demasiados números");
+            break;
+          }
+          else{
+            alert("Cuenta:"+foo);
+            foo=foo+1;
+          }
         }
         count=count+1;
       }
     }
     else{
       alert("Error: No se pueden ingresar números idénticos");
+      break;
+    }*/
+    //Ejercicios casa:Sin if y usar dos bucles
+    //HARD MODE:Con un único bucle
+
+    //Soluciones
+    /*var inicio=prompt("Indique el inicio");
+    var fin=prompt("Indique el final");
+    inicio=parseInt(inicio);
+    fin=parseInt(fin);
+
+    var contador=inicio;
+    //SOLUCIONES
+    while(contador!=fin){
+      if(inicio<fin){
+        alert(contador);
+        contador=contador+1;
+      }
+      else{
+        alert(contador);
+        contador=contador-1;
+      }
     }
+    alert(contador);*/
+    //SIN IF Y UN BUCLE
+    /*while(inicio<fin && contador<=fin){
+      alert(contador);
+      contador=contador+1;
+    }*/
+    //OTRO EJEMPLO, metiendo un contador más
+    //...var contador_1=inicio;
+    //...var contador_2=inicio;
+    /*while(contador_1<fin || contador_2>fin){
+    alert(contador_1+"----"+contador_2);
+    contador_1=contador_1+1;
+    contador_2=contador_2-1;
+  }*/
+  //Con Math.sign()
+  var inicio,final;
+  while (isNaN(inicio)==true){//No es necesario el operador lógico pero yo me aclaro así lol
+    var inicio=parseInt(prompt("Dame un inicio:"));
+  }
+  while(isNaN(final)==true){
+    var final=parseInt(prompt("Dame un final:"));
+  }
+  var contador=inicio;
+  var esNumero=Math.sign(inicio-final);//Tampoco es necesario almacenar este dato en una variable xd
+  if(esNumero==1){
+    while(contador>=final){
+      alert(contador);
+      contador=contador-1;
+    }
+  }
+  else if(esNumero==-1){
+    while(contador<=final){
+      alert(contador);
+      contador=contador+1;
+    }
+  }
+  else{
+    alert("Error, no se puede hacer la cuenta. Has introducido dos números iguales.");
+  }
+
+  //Solucion de Jorge
+  /*
+  ...var sumar=Math.sign(inicio-final);
+  while (contador!=final) {
+    alert(contador);
+    contador=contador+sumar;
+  }
+  */
   </script>
 </html>
