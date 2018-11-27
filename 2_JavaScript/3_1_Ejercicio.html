@@ -77,11 +77,20 @@
     contador_2=contador_2-1;
   }*/
   //Con Math.sign()
-  var inicio,final;
-  while (isNaN(inicio)==true){//No es necesario el operador lógico pero yo me aclaro así lol
+  var inicio=null;//No hace falta declarar las variables con valor cuando se usa el flag de isNaN
+  var final=null;
+  //Flag usando isNaN
+  /*while (isNaN(inicio)==true){//No es necesario el operador lógico pero yo me aclaro así lol
     var inicio=parseInt(prompt("Dame un inicio:"));
   }
   while(isNaN(final)==true){
+    var final=parseInt(prompt("Dame un final:"));
+  }*/
+  //Flag usando TypeOf
+  while(typeof(inicio)!="number"){
+    var inicio=parseInt(prompt("Dame un inicio:"));
+  }
+  while(typeof(final)!="number"){
     var final=parseInt(prompt("Dame un final:"));
   }
   var contador=inicio;
