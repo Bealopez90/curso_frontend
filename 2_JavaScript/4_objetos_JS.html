@@ -54,7 +54,7 @@
     /*var identado=texto.charAt(0).toUpperCase()+texto.substring(1);
     document.write("<div>"+identado+"</div>");*/
     //EJERCICIO 2
-    var posPrimerEspacio=texto.indexOf(" ");
+    /*var posPrimerEspacio=texto.indexOf(" ");
     var posSegundaPalabra=texto.lastIndexOf(" ");
     var primeraPalabra=texto.substring(0, posPrimerEspacio);
     document.write("<br/>"+primeraPalabra.charAt(0).toUpperCase()+primeraPalabra.substring(1).toLowerCase());
@@ -71,6 +71,55 @@
 
     var posEspacioDos=texto.indexOf(" ", posEspacioUno+2);
     var letraTres=texto.charAt(posEspacioDos+1).toUpperCase();
-    document.write(letraTres);
+    document.write(letraTres);*/
+
+    //BUCLE WHILE
+    /*var posEspacio=0;
+    var letra="";
+    var iniciales="";
+    document.write(texto.charAt(0).toUpperCase());
+    posEspacio=posEspacio+1;
+    while(posEspacio<=texto.length){
+      letra=texto.charAt(posEspacio);
+      if(letra==" "){
+        iniciales=texto.charAt(posEspacio+1).toUpperCase();
+        document.write(letra+iniciales);
+        posEspacio=posEspacio+2;
+      }
+      else{
+        document.write(letra);
+        posEspacio=posEspacio+1;
+      }
+    }*/
+    //BUCLE FOR
+    /*var capit="";
+    document.write(texto.charAt(0).toUpperCase());
+    for(var i=1;i<=texto.length;i++){
+      if(texto.charAt(i-1)==" "){
+        capit=texto.charAt(i).toUpperCase();
+      }
+      else{
+        capit=texto.charAt(i);
+      }
+      document.write(capit)
+    }*/
+    //SOLUCION GERMAN
+    var posEspacioUno=texto.indexOf(" ");
+    var inicial=texto.charAt(0).toUpperCase();
+    var restoPalabra=texto.substring(1, posEspacioUno).toLowerCase();
+    var propperCase=inicial+restoPalabra;
+    var posEspacioDos;
+
+    while (posEspacioUno>=0) {
+      posEspacioDos=texto.indexOf(" ", posEspacioUno+1);
+      if (posEspacioDos==-1) {
+        posEspacioDos=texto.length;
+      }
+      inicial=texto.charAt(posEspacioUno+1).toUpperCase();
+      restoPalabra=texto.substring(posEspacioUno+2, posEspacioDos);
+      propperCase=propperCase+" "+inicial+restoPalabra;
+      posEspacioUno=texto.indexOf(" ", posEspacioUno+1);
+    }
+    document.write(propperCase+"<br/>");
   </script>
 </html>
