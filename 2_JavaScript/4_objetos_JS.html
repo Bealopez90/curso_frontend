@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Objeto Document</h1>
+  </body>
+  <script type="text/javascript">
+    document.write("<h2>Mostrando texto</h2>");
+    /*var nombre="";
+    var edad="";
+    while(nombre==""||edad==""||isNaN(parseInt(edad))==true){
+      nombre=prompt("Introduce tu nombre");
+      edad=prompt("Introduce tu edad");
+    }
+    document.write("<h2>Tu nombre es "+nombre+"</h2>");
+    document.write("<h2>Tu edad es "+edad+"</h2>");*/
+    /*var nombre="";
+    var textoEdad="";
+    var edad=parseInt(textoEdad);
+    var regex=/\d+/;
+
+    while (isNaN(edad)) {
+      textoEdad=prompt("Indique su edad:");
+      edad=parseInt(textoEdad);
+      while (edad<=0) {
+        textoEdad=prompt("Indique su edad:");
+        edad=parseInt(textoEdad);
+      }
+    }
+    while (nombre==""||nombre.search(regex)!=-1) {
+      nombre=prompt("Indique su nombre:");
+    }
+    alert("Hola "+nombre+":\n-Tu edad es:\n-\""+edad+" años\"");*/
+
+    var texto=prompt("Escribe un texto:");
+    /*document.write("Su texto:<br/>");
+    document.write(texto+"<br/>");
+
+    document.write("Longitud: ".concat(texto.length).concat(" caracteres<br/>"));
+    document.write("En may&uacute;sculas: "+texto.toUpperCase()+"<br/>");
+    document.write("En min&uacute;sculas: "+texto.toLowerCase()+"<br/>");
+    document.write("El primer car&aacute;cter : "+texto.charAt(0)+"<br/>");
+    document.write("El tercer car&aacute;cter : "+texto.charAt(2)+"<br/>");
+    document.write("Primer espacio en : "+texto.indexOf(" ")+"<br/>");
+    document.write("Mitad del texto : "+texto.substring(texto.length/2)+"<br/>");*/
+    //EJERCICIO 1 Primera letra mayus y resto minus
+    //EJERCICIO 2 Dado un texto, convertir cada una de sus palabras (primera mayus y resto minus)
+    //EJERCICIO 3 Mostrar solamente iniciales
+
+    //EJERCICIO 1
+    /*var identado=texto.charAt(0).toUpperCase()+texto.substring(1);
+    document.write("<div>"+identado+"</div>");*/
+    //EJERCICIO 2
+    var posPrimerEspacio=texto.indexOf(" ");
+    var posSegundaPalabra=texto.lastIndexOf(" ");
+    var primeraPalabra=texto.substring(0, posPrimerEspacio);
+    document.write("<br/>"+primeraPalabra.charAt(0).toUpperCase()+primeraPalabra.substring(1).toLowerCase());
+    var segundaPalabra=texto.substring(posPrimerEspacio+1,posSegundaPalabra+1);
+    document.write(" "+segundaPalabra.charAt(0).toUpperCase()+segundaPalabra.substring(1).toLowerCase());
+    var terceraPalabra=texto.substring(posSegundaPalabra+1, texto.length);
+    document.write(" "+terceraPalabra.charAt(0).toUpperCase()+terceraPalabra.substring(1).toLowerCase());
+    //EJERCICIO 3
+    var posEspacioUno=texto.indexOf(" ");
+    var letraUno=texto.charAt(0).toUpperCase();
+    document.write("<br/>"+letraUno);
+    var letraDos=texto.charAt(posEspacioUno+1).toUpperCase();
+    document.write(letraDos);
+
+    var posEspacioDos=texto.indexOf(" ", posEspacioUno+2);
+    var letraTres=texto.charAt(posEspacioDos+1).toUpperCase();
+    document.write(letraTres);
+  </script>
+</html>
