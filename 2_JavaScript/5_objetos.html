@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Ejemplos objetos</h1>
+  </body>
+  <script type="text/javascript">
+    /*var miPrimerObj=new Object();
+    miPrimerObj.unSubValor=10;
+    miPrimerObj.otraPropiedad="Un texto";
+    miPrimerObj.atributoObjeto=new Object();
+    miPrimerObj.variableMiembro=true;*/
+
+    var persona1=new Object();
+    persona1.nombre="Ana";
+    persona1.apellido1="Perez";
+    persona1.apellido2="Rodriguez";
+    persona1.edad="25";
+    persona1.salario=prompt("Dime el salario de "+persona1.nombre+":");
+    persona1.salario=parseFloat(persona1.salario);
+
+    var persona2=new Object();
+    persona2.nombre="Pepito";
+    persona2.apellido1="Gomez";
+    persona2.apellido2="Rodriguez";
+    persona2.edad="38";
+    persona2.salario=prompt("Dime el salario de "+persona2.nombre+":");
+    persona2.salario=parseFloat(persona2.salario);
+
+
+    if (persona1.salario>0) {
+      persona1.tieneTrabajo=true;
+    } else {
+      persona1.tieneTrabajo=false;
+    }
+    if (persona2.salario>0) {
+      persona2.tieneTrabajo=true;
+    } else {
+      persona2.tieneTrabajo=false;
+    }
+    var orden="";
+    var regex=/(N|A|E|n|a|e)/g;
+    while(orden.search(regex)==-1)
+    {
+      orden=prompt("¿En qué orden quiere verlo?(N para nombre, A para apellidos, E para edad):");
+    }
+    if(orden.toUpperCase()=="N"){
+      if(persona1.nombre>persona2.nombre){
+        document.write(persona1.nombre+" "+persona1.apellido1+" "+persona1.apellido2);
+        document.write("<br/>");
+        document.write("Edad: "+persona1.edad);
+        if (persona1.tieneTrabajo) {
+          document.write("<br/>Tiene trabajo.");
+          document.write("<br/>Salario: "+persona1.salario);
+        } else {
+          document.write("<br/>No tiene trabajo.");
+        }
+        document.write("<br/>"+persona2.nombre+" "+persona2.apellido1+" "+persona2.apellido2);
+        document.write("<br/>");
+        document.write("Edad: "+persona2.edad);
+        if (persona2.tieneTrabajo) {
+          document.write("<br/>Tiene trabajo.");
+          document.write("<br/>Salario: "+persona2.salario);
+        } else {
+          document.write("<br/>No tiene trabajo.");
+        }
+      }
+      else{
+        document.write(persona2.nombre+" "+persona2.apellido1+" "+persona2.apellido2);
+        document.write("<br/>");
+        document.write("Edad: "+persona2.edad);
+        if (persona2.tieneTrabajo) {
+          document.write("<br/>Tiene trabajo.");
+          document.write("<br/>Salario: "+persona2.salario);
+        } else {
+          document.write("<br/>No tiene trabajo.");
+        }
+        document.write("<br/>"+persona1.nombre+" "+persona1.apellido1+" "+persona1.apellido2);
+        document.write("<br/>");
+        document.write("Edad: "+persona1.edad);
+        if (persona1.tieneTrabajo) {
+          document.write("<br/>Tiene trabajo.");
+          document.write("<br/>Salario: "+persona1.salario);
+        } else {
+          document.write("<br/>No tiene trabajo.");
+        }
+      }
+    }
+    else if(orden.toUpperCase()=="A")
+    {
+      if(persona1.apellido1>persona2.apellido1){
+        document.write(persona1.nombre+" "+persona1.apellido1+" "+persona1.apellido2);
+        document.write("<br/>");
+        document.write("Edad: "+persona1.edad);
+        if (persona1.tieneTrabajo) {
+          document.write("<br/>Tiene trabajo.");
+          document.write("<br/>Salario: "+persona1.salario);
+        } else {
+          document.write("<br/>No tiene trabajo.");
+        }
+        document.write("<br/>"+persona2.nombre+" "+persona2.apellido1+" "+persona2.apellido2);
+        document.write("<br/>");
+        document.write("Edad: "+persona2.edad);
+        if (persona2.tieneTrabajo) {
+          document.write("<br/>Tiene trabajo.");
+          document.write("<br/>Salario: "+persona2.salario);
+        } else {
+          document.write("<br/>No tiene trabajo.");
+        }
+      }
+      else{
+        document.write(persona2.nombre+" "+persona2.apellido1+" "+persona2.apellido2);
+        document.write("<br/>");
+        document.write("Edad: "+persona2.edad);
+        if (persona2.tieneTrabajo) {
+          document.write("<br/>Tiene trabajo.");
+          document.write("<br/>Salario: "+persona2.salario);
+        } else {
+          document.write("<br/>No tiene trabajo.");
+        }
+        document.write("<br/>"+persona1.nombre+" "+persona1.apellido1+" "+persona1.apellido2);
+        document.write("<br/>");
+        document.write("Edad: "+persona1.edad);
+        if (persona1.tieneTrabajo) {
+          document.write("<br/>Tiene trabajo.");
+          document.write("<br/>Salario: "+persona1.salario);
+        } else {
+          document.write("<br/>No tiene trabajo.");
+        }
+      }
+    }
+    else if(orden.toUpperCase()=="E"){
+      if(persona1.edad>persona2.edad){
+        document.write(persona1.nombre+" "+persona1.apellido1+" "+persona1.apellido2);
+        document.write("<br/>");
+        document.write("Edad: "+persona1.edad);
+        if (persona1.tieneTrabajo) {
+          document.write("<br/>Tiene trabajo.");
+          document.write("<br/>Salario: "+persona1.salario);
+        } else {
+          document.write("<br/>No tiene trabajo.");
+        }
+        document.write("<br/>"+persona2.nombre+" "+persona2.apellido1+" "+persona2.apellido2);
+        document.write("<br/>");
+        document.write("Edad: "+persona2.edad);
+        if (persona2.tieneTrabajo) {
+          document.write("<br/>Tiene trabajo.");
+          document.write("<br/>Salario: "+persona2.salario);
+        } else {
+          document.write("<br/>No tiene trabajo.");
+        }
+      }
+      else{
+        document.write(persona2.nombre+" "+persona2.apellido1+" "+persona2.apellido2);
+        document.write("<br/>");
+        document.write("Edad: "+persona2.edad);
+        if (persona2.tieneTrabajo) {
+          document.write("<br/>Tiene trabajo.");
+          document.write("<br/>Salario: "+persona2.salario);
+        } else {
+          document.write("<br/>No tiene trabajo.");
+        }
+        document.write("<br/>"+persona1.nombre+" "+persona1.apellido1+" "+persona1.apellido2);
+        document.write("<br/>");
+        document.write("Edad: "+persona1.edad);
+        if (persona1.tieneTrabajo) {
+          document.write("<br/>Tiene trabajo.");
+          document.write("<br/>Salario: "+persona1.salario);
+        } else {
+          document.write("<br/>No tiene trabajo.");
+        }
+      }
+    }
+  </script>
+</html>

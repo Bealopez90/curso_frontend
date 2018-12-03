@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Tus ciudades</h1>
+  </body>
+  <script type="text/javascript">
+    var i=0;
+    var ciud=new Array();
+    var valor;
+    while(valor!=""){
+      valor=prompt("Dime donde quieres ir (no metas nada si has acabado):");
+      if(valor!=""){
+        ciud[i]=valor;
+        i++;
+      }
+      else{
+        i=0;
+      }
+    }
+    ciud.sort();//en orden
+    while(i<ciud.length){
+      document.write(ciud[i]+"<br/>");
+      i++;
+    }
+  </script>
+</html>
