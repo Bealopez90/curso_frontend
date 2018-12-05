@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejemplos bucles for y do-while</title>
+    <style media="screen">
+      table{
+        border:2px solid black;
+        color:white;
+      }
+      tr:nth-child(even){
+        background-color:#C70039;
+      }
+      tr:nth-child(odd){
+        background-color:#FF5733;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ejemplos bucles for y do-while</h1>
+    <script type="text/javascript">
+
+      document.write("<table>");
+      //bucle for
+      for (var i = 1; i <=10; i++) {
+        document.write("<tr><td><b>Tabla del "+i+"</b></td>");
+          for(var j=0;j<=10;j++){
+            document.write("<td>"+i+" x "+j+" = "+i*j+"</td>");
+          }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+    </script>
+  </body>
+</html>

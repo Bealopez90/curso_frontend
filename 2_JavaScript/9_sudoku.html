@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sudoku</title>
+  </head>
+  <body>
+    <h1>Sudoku</h1>
+  </body>
+  <script type="text/javascript">
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    var matriz=new Array();
+
+    for (var x=0; x < 9; x++) {
+      matriz[x]=new Array();
+      for (var y=0; y < 9; y++) {
+        matriz[x][y] = Math.floor(Math.random()*9+1);
+      }
+    }
+
+    document.write("<table border='1px' width='250px' height='250px'>");
+      for(var foo=0;foo<matriz.length;foo++){
+        document.write("<tr>");
+        for (var bar = 0; bar<matriz[foo].length;bar++) {
+          document.write("<td align='center' bgcolor='"+getRandomColor()+"'>"+matriz[foo][bar]+"</td>");
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+  </script>
+</html>
