@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+*{
+	font-family: 'Roboto', sans-serif;
+}
+body{
+	background-color: saddlebrown;
+}
+p{
+	background-color: #AC894F;
+	padding: 1em;
+	margin-top: 0em;
+	margin-bottom: 0em;
+}
+.derecha{
+	text-align: right;
+	margin-left: 5em;
+}
+.izquierda{
+	text-align: left;
+	margin-right: 5em;
+}
+.bloque{
+	min-height: 3em;
+	background-color: beige;
+}
+.bloque2{
+	background-color: coral;
+}
+.bloqueverde{
+	background-color: green;
+	min-height: 10em;
+	margin-left: 10em;
+	margin-right: 10em;
+}
+.bloqueazul{
+	background-color: blue;
+	min-height: 5em;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	
+	position: relative;
+}
+.despl{
+	background-color: blue;
+	min-height: 5em;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	
+	position: relative;
+	top: -3em;
+	right: -3em;
+}
