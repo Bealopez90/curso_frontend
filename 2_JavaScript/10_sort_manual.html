@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sort JS desde cero</title>
+  </head>
+  <body>
+    <h1>SORTING</h1>
+    <div id="sortarray"></div>
+  </body>
+  <script type="text/javascript">
+    var listanum=[12,34,5,89,43,6,30,21];
+    var listavac=[];
+    var esmenor=listanum[0];
+    var foo,bar;
+    var posmenor;
+    for(foo=0;foo<listanum.length;foo++){
+      if(esmenor>listanum[foo]){
+        esmenor=listanum[foo];
+        posmenor=foo;
+      }
+    }
+    listavac[0]=esmenor;
+    var segmenor=listanum[0];
+    for(bar=0;bar<listanum.length;bar++){
+      if(posmenor!=bar){
+        if(segmenor>listanum[bar]){
+          segmenor=listanum[bar];
+        }
+      }
+    }
+    /*for(bar=0;bar<listavac.length;bar++){
+      astring=astring+listavac[bar]+("<br/>");
+    }*/
+    document.getElementById("sortarray").innerHTML=esmenor+" "+segmenor;
+  </script>
+</html>
