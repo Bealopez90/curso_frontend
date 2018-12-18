@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Ejercicios</h1>
+</body>
+<script>
+    function cabeceras(titulo){
+        var cadena="";
+        for(var i=1;i<7;i++){
+            cadena=cadena+"<h"+i+">"+titulo+"</h"+i+">";
+        }
+        document.write(cadena);
+    }
+    function operaciones(a,b,op){
+        var result;
+        if(op=="+"){
+            result=a+b;
+        }
+        else if(op=="-"){
+            result=a-b;
+        }
+        else if(op=="*"){
+            result=a*b;
+        }
+        else if(op=="/"){
+            result=a/b;
+        }
+
+        document.write("El resultado es"+result);
+    }
+    function alCubo(num,exp){
+        return num^exp;
+    }
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+</body>
+<script>
+    function arraycabec(foo){
+        var arrcab=["h1","h2","h3","h4","h5","h6"];
+        var cadena="";
+        for(i=0;i<arrcab.length;i++){
+            cadena=cadena+"<"+arrcab[i]+">"+foo+"</"+arrcab[i]+">";
+        }
+        document.write(cadena);
+    }
+    function operacion(oper){
+        document.write(typeof oper =="string" ? eval(oper) : "Error.");
+    }
+
+    function otraOper(a,b,op){
+        var result= op=="+" ? a+b :
+                    op=="-" ? a-b :
+                    op=="*" ? a*b :
+                    op=="/" ? a/b :
+                    "Error.";
+        document.write(result);
+    }
+
+    function elevarA(x,y){
+        var mb=x;
+        for(var i=1;i<y;i++){
+            x=x*mb;
+        }
+        document.write(x);
+    }
+</script>
+</html>
