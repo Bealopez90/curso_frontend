@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>T&iacute;tulo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    <h1>Cabecera</h1>
+</body>
+<script>
+    //función básica: Ni recibe ni devuelve
+    function mostrarTitulo(){
+        document.write("<h2>Cabecera 2</h2>");
+        document.write("<br/>");
+    }
+    //función que recibe datos
+    function calculaDescuento(precio,descuento){
+        var precioConDesc;
+        precioConDesc=precio - precio*descuento/100;
+        document.write("Precio: "+ precio + ", descuento: " + descuento + ", total: "+ precioConDesc +"<br/>");
+    }
+
+    calculaDescuento(100,15);
+    var otroPrecio=300;
+    calculaDescuento(otroPrecio,10);
+</script>
+</html>
