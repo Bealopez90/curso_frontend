@@ -9,7 +9,12 @@ boton.setAttribute("value","¡Pero anímate!");
 
 function cuandoSePulsa(){
     for(var j=0;j<arret.length;j++){
-        arret[j].style.webkitAnimationPlayState="running";
+        if(arret[j].style.webkitAnimationPlayState=="running"){
+            arret[j].style.webkitAnimationPlayState="paused";
+        }
+        else if(arret[j].style.webkitAnimationPlayState="paused"){
+            arret[j].style.webkitAnimationPlayState="running";
+        }
     }
 }
 boton.setAttribute("onclick","cuandoSePulsa();");
