@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Elementos DOM del siguiente DIV</h1>
+    <div id="unid" style="background-color:chartreuse">
+        <p>loremipsum</p>
+        <table>
+            <tr>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+            </tr>
+            <tr>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+            </tr>
+            <tr>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    var unDiv= document.getElementById("unid");
+    var nodo=document.createElement("h1");
+    var textoenh1=document.createTextNode("Un subtítulo añadido por JS");
+    nodo.appendChild(textoenh1);
+    unDiv.appendChild(nodo);
+
+    unDiv.setAttribute("style","background-color:red");
+
+    document.getElementsByTagName("p")[0].appendChild(document.createTextNode("TEXTO APPEND"));
+</script>
+</html>

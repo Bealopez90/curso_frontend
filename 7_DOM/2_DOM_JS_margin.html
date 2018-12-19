@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="d1" style="margin: 0px 0px 0px 5px; background-color:chocolate;">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi eveniet dicta, nam reiciendis cupiditate molestiae. Autem voluptate sapiente itaque debitis nesciunt eaque laborum dolorum iure porro aspernatur, esse accusantium. Facilis veniam odio quis eius quidem, tempora ipsa vel corporis mollitia repudiandae itaque deserunt atque iste neque culpa magnam qui magni alias, consectetur libero repellendus. Numquam aperiam, quod modi officiis sint a quisquam ratione maxime.
+    </div>
+</body>
+<script>
+    //variables globales
+    var posi=5;
+    var veloc=0.1;
+    var d1=document.getElementById("d1");
+    var reloj=setInterval(cadaDecSeg, 10);
+    function cadaDecSeg(){
+        if(posi>=window.innerWidth-200){
+            clearInterval(reloj);
+        }
+        else{
+            posi+=veloc;
+            veloc+=0.05;
+            posi++;
+            d1.setAttribute("style","margin: 0px 0px 0px " + posi + "px; background-color:chocolate; width:200px;")
+        }
+    }
+</script>
+</html>
