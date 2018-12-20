@@ -8,19 +8,20 @@
 		<h1>Formulario de registro</h1>
 <form action="0_plantilla.html" method="get">
 	<input type="submit" value="ENVIAR POR MAIL"/>
+	<input type="button" value="Validar" onclick="validate();">
 <table>
 	<tr><td>Nombre:</td>
-		<td><input id="nombre" size="30" maxlength="50"/></td></tr>
+		<td><input class="verify" id="nombre" size="30" maxlength="50"/></td></tr>
 	<tr><td>Primer apellido:</td>
-		<td><input id="primer_apellido" size="30" maxlength="50"/></td></tr>
+		<td><input class="verify" id="primer_apellido" size="30" maxlength="50"/></td></tr>
 	<tr><td>Segundo apellido:</td>
-		<td><input id="segundo_apellido" size="30" maxlength="50"/></td></tr>
+		<td><input class="verify" id="segundo_apellido" size="30" maxlength="50"/></td></tr>
 	<tr><td>Email: </td>
-		<td><input id="email" size="30" maxlength="100"/></td></tr>
+		<td><input class="verify" id="email" size="30" maxlength="100"/></td></tr>
 	<tr><td>Password:</td>
-		<td><input id="password" type="password" maxlength="20"/></td></tr>
+		<td><input class="verify" id="password" type="password" maxlength="20"/></td></tr>
 	<tr><td>Password 2:</td>
-		<td><input id="password_rep" type="password" maxlength="20"/></td></tr>
+		<td><input class="verify" id="password_rep" type="password" maxlength="20"/></td></tr>
 	<tr><td>Sugerencias:</td>
 		<td><textarea id="sugerencias" rows="10">
 		Me gustaría que...
@@ -28,6 +29,7 @@
 
 </table>
 		</form>
+		<script src="4_DOM_formularios.js"></script>
 	</body>
 </html>
 
