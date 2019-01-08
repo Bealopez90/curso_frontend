@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Longitud de una cifra</title>
+</head>
+<body>
+    <h1>Longitud de una cifra</h1>
+    <form action="" method="post">
+        <input type="button" value="Enviar" onclick="main();"/><br/>
+        <input type="text" name="numero" id="miNumero" placeholder="Introduzca aqu&iacute; el n&uacute;mero"><br/>
+        <h3>Resultado...</h3>
+        <div id="longitud"></div>
+    </form>
+</body>
+<script type="text/javascript">
+    function main(){
+        var numero=document.getElementById("miNumero").value;
+        var control=parseInt(numero);
+        if(control>=0&&control<=999){
+        var contador=numero.length;
+        document.getElementById("longitud").innerHTML="El n&uacute;mero tiene "+contador+" cifras.";
+        //Creando un nodo hijo nuevo
+        //var nodeResult=document.createTextNode("El n&uacute;mero tiene "+contador+" cifras.");
+        //document.getElementById("longitud").appendChild(nodeResult);
+        //Utilizando .text
+        //document.getElementById("longitud").childNodes[0].text="El n&uacute;mero tiene "+contador+" cifras.";
+        }
+        else if(isNaN(control)==true){
+            document.getElementById("longitud").innerHTML="";
+            alert("Lo introducido no es un número. Introduzca un número.");
+        }
+        else{
+            document.getElementById("longitud").innerHTML="";
+            alert("La longitud del número no es válida.");
+        }
+    }
+
+</script>
+</html>
