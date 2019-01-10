@@ -11,3 +11,9 @@ function parseo(){
     var yaPars=escape(cadena);
     document.getElementById("resul").innerHTML="<p>"+yaPars+"</p>";
 }
+function codificarASCII(){
+    var inputjs=document.getElementById("esca");
+    var enc=encodeURI(inputjs.value);
+    var dec=decodeURI(enc);
+    document.getElementById("resul").innerHTML="<p>"+enc+"<br/>"+dec+"</p>";
+}
