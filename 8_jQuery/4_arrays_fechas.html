@@ -10,6 +10,17 @@
     <div id="div-texto"></div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>
+        function compararPorAnio(a,b) {
+            if (a.getFullYear()<b.getFullYear()) {
+                return -1;
+            }
+            else if(a.getFullYear()>b.getFullYear()){
+                return +1;
+            }
+            else{
+                return 0;
+            }
+        }
         function funcionPrincipal() {
             var fechas= [
                 new Date(123456789012345),
@@ -21,6 +32,9 @@
             $("#div-texto").append("<h2>"+fechas.join("<br/>")+"</h2>");
             var fechasSort=fechas.sort();
             $("#div-texto").append("</br><h2>"+fechasSort.join("<br/>")+"</h2>");
+            $("#div-texto").append("<br/><h2>"+compararPorAnio(new Date(), fechas[1])+"</h2>");
+            fechasSort=fechas.sort(compararPorAnio);
+            $("#div-texto").append("<br/><h2>"+fechasSort.join("<br/>")+"</h2>");
         }
         jQuery(document).ready(funcionPrincipal);
     </script>
