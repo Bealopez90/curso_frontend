@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div id="div-texto"></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        function funcionPrincipal() {
+            var arrA= new Array(8, 3, 9, 5);
+            var arrB=["Peras", "Manzanas"];
+            var arrMezcla=arrA.concat(arrB);
+            for (var i=0;i<arrMezcla.length;i++){
+                $("#div-texto").html(
+                    $("#div-texto").html()+"<p>"+arrMezcla[i]+"</p>"
+                );
+            }
+            $("#div-texto").append("<br/>JOIN: "+arrMezcla.join());
+            arrMezcla=arrMezcla.reverse();
+            $("#div-texto").append("<br/>REVERSE: "+arrMezcla.join());
+            arrMezcla=arrMezcla.sort();
+            $("#div-texto").append("<br/>SORT: "+arrMezcla.join());
+        }
+        jQuery(document).ready(funcionPrincipal);
+    </script>
+</body>
+</html>

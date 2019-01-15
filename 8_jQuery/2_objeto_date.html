@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!--<button type="button" onclick="dameLaHora();">Dame la hora</button>-->
+    <div id="div-texto"></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        function dameLaHora() {
+            var fechaActual=new Date();
+            var elMesEs=fechaActual.getMonth();
+            var mesArr=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+            var mesEscrito=mesArr[elMesEs];
+            var horaFormat="Mes: "+mesEscrito+"<br/>";
+            horaFormat+= "D&iacute;a: "+fechaActual.getDate()+"<br/>";
+            horaFormat+="Hora: "+fechaActual.getHours()+":"+fechaActual.getMinutes()+":"+fechaActual.getSeconds()+"<br/>";
+            return horaFormat;
+        }
+        function funcionPrincipal(){
+            var fechaActual=new Date();
+            $("#div-texto").html("Año: "+fechaActual.getFullYear()+"<br/>");
+            $("#div-texto").html($("#div-texto").html()+dameLaHora());
+        }
+
+        //jQuery(document).ready(funcionPrincipal);
+        setInterval(funcionPrincipal,1000);
+    </script>
+</body>
+</html>

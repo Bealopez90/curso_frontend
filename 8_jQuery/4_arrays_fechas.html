@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div id="div-texto"></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        function funcionPrincipal() {
+            var fechas= [
+                new Date(123456789012345),
+                new Date(2018, 12, 1, 9),
+                new Date("January 8, 2019 09:00:00"),
+                new Date("February 14, 2019, 20:45:00")
+            ];
+            $("#div-texto").html((new Date()).toString());
+            $("#div-texto").append("<h2>"+fechas.join("<br/>")+"</h2>");
+            var fechasSort=fechas.sort();
+            $("#div-texto").append("</br><h2>"+fechasSort.join("<br/>")+"</h2>");
+        }
+        jQuery(document).ready(funcionPrincipal);
+    </script>
+</body>
+</html>
