@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div id="div-texto"></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        //funcionInex("Booooo!");
+        function funcionPrincipal(){
+            try {
+                throw new Error("Provocando un error");
+                $("?div-texto").html("<br/>BOOOOOOOO!!");
+                funcionInex("Booooo!");
+            } catch (error) {
+                $("#div-texto").append("<p>Ha habido una excepción.</p>");
+                $("#div-texto").append(error.message);
+            } finally {
+                $("#div-texto").append("<br/>Comprobando FINALLY.");
+            }
+            $("#div-texto").append("El programa se sigue ejecutando");
+        }
+        $(document).ready(funcionPrincipal);
+    </script>
+</body>
+</html>

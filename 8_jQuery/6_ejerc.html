@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+   <input type="text" id="tunota">
+   <input type="button" value="Estoy aprobado" id="esaprob" onclick="main();">
+   <div id="resul"></div>
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script>
+       function main() {
+           var minota;
+           $("#resul").html("");
+           minota=$("#tunota").val();
+           try{
+               if(minota==""){throw new Error("Data is empty.");}
+               if(isNaN(minota)){throw new Error("Data is not a number.");}
+               minota=Number(minota);
+               if(minota<5){throw new Error("Suspended.");}
+               if(minota>10){throw new Error("Why you lyin'?");}
+               $("#resul").html("Approved.");
+           }
+           catch(error){
+               $("#resul").html(error.message);
+               if(error=="Why you lyin'?"){
+                   window.open("https://www.youtube.com/watch?v=IdtKbq3Omkw", "_blank");
+               }
+           }
+       }
+   </script>
+</body>
+</html>
