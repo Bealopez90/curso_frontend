@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <form>
+        <input type="text" id="lista-frutas" list="frutas">
+        <datalist id="frutas">
+            <option value="Manzanas"></option>
+            <option value="Peras"></option>
+            <option value="Chirimoyas"></option>
+        </datalist>
+        <br/>
+        <input type="text" id="frutanueva"/>
+        <input type="button" onclick="agregarfruta();">
+    </form>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script>
+        var otrasFrutas=["Platanos","Ciruelas","Aguacates"];
+        function agregarfruta(){
+            otrasFrutas[otrasFrutas.length]=$("#frutanueva").val();
+            $("#frutas").append("<option value='"+otrasFrutas[otrasFrutas.length-1]+"'></option>");
+        }
+        $(document).ready(function(){
+            $("#frutas").append("<option value='Uvas'></option>");
+            for(var i=0;i<otrasFrutas.length;i++){
+                $("#frutas").append("<option value='"+otrasFrutas[i]+"'></option>"); 
+            }
+        });
+    </script>
+</body>
+</html>
