@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var hotel=new Object();
+        hotel.nombre="Hotel NH";
+        hotel.calle="C/Laquesea,123"
+        hotel.precio=70.5;
+        hotel.abierto=true;
+
+        var textoJSONHotel=JSON.stringify(hotel);
+        document.write(textoJSONHotel);
+
+        //Otro método
+        var textoJSONOtroHotel=`{
+            "nombre":"Hotel TripleVago",
+            "calle":"C/Laquesea,456",
+            "precio":60.5,
+            "abierto":false
+        }`;
+
+        //mi hotel
+        var miHotel={
+            "nombre":"Hotel UWU",
+            "calle":"C/Dontuwu,12",
+            "precio":149,
+            "abierto":true
+        };
+        document.write(`<h2>${miHotel.nombre}</h2>`);
+        document.write(`<h2>${miHotel.calle}</h2>`);
+        document.write(`<h2>${miHotel.precio}</h2>`);
+        document.write(`<h2>${miHotel.abierto}</h2>`);
+        var objOtroHotel=JSON.parse(textoJSONOtroHotel);
+        alert(objOtroHotel.nombre);
+    </script>
+</body>
+</html>

@@ -7,8 +7,77 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Clases y objetos</h1>
     <script>
+        //EcmaScript 6
+        class Rectangulo {
+            //Constructor: Características fijas que todo objeto que se genere debe poseer
+            constructor(nuevoAncho,nuevoAlto){
+                this.ancho=nuevoAncho;
+                this.alto=nuevoAlto;
+                
+            }
+
+            //Calcular área
+            //En las funciones/los métodos de una clase no hace falta declarar "function"
+            area(){
+                var areaTotal=this.ancho*this.alto;
+                return areaTotal;
+            }
+            perimetro(){
+                return this.alto*2 + this.ancho*2;
+            }
+        }
+
+        class Circulo{
+            constructor(radio){
+                this.radio=radio;
+            }
+
+            area(){
+                return Math.round(Math.PI*Math.pow(this.radio,2));
+            }
+            circunferencia(){
+                return Math.round(Math.PI*this.radio*2);
+            }
+        }
         
+        class Persona{
+            constructor(nombre, anio){
+                this.nombre=nombre;
+                this.anio=anio;
+            }
+
+            esAdulto(){
+                var anioHoy=new Date().getFullYear();
+                var edad=anioHoy-this.anio;
+                if(edad<18){
+                    return "Es menor.";
+                }
+                else{
+                    return "Es una persona adulta.";
+                }
+            }
+        }
+
+        var unRect=new Rectangulo();
+        unRect.alto=6;
+        unRect.ancho=10;
+        var resul=unRect.area();
+        document.write("<h3>"+ resul + "</h3>");
+        //también se puede escribir
+        document.write("<h3>"+unRect.perimetro()+"</h3>");
+        var otroRect=new Rectangulo(5,3);
+        document.write("<h3>&Aacute;rea del otro rect&aacute;ngulo:"+otroRect.area()+"</h3>");
+        //Circulo
+        var circUno=new Circulo(5);
+        document.write("<h3>&Aacute;rea del primer c&iacute;rculo:"+circUno.area()+"</h3>");
+        document.write(`Radio: ${circUno.radio} <br/> Area: ${circUno.area()} <br/> Per&iacute;metro: ${circUno.circunferencia()}`);
+
+        //Persona
+        var persUno=new Persona("Marta",2015);
+        document.write("<h4>La persona es "+persUno.nombre+".</h4>");
+        document.write("<h4>"+persUno.esAdulto()+"</h4>");
     </script>
 </body>
 </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script>
+      class FechaDom{
+          constructor(dia, mes, anio){
+              $("body").append(`Dia:<input id="dia" type="text" value="${dia}"/>
+              Mes:<input id="mes" type="text" value="${mes+1}"/>
+              A&ntilde;o:<input id="anio" type="text" value="${anio}"/><br/>`);
+          }
+          getDia(){
+              return parseInt($("#dia").val());
+          }
+          getMes(){
+            return parseInt($("#mes").val());
+          }
+          getAnio(){
+              return parseInt($("#anio").val());
+          }
+
+      }
+      var fecha=new Date();
+      var initialize=new FechaDom(fecha.getDay(),fecha.getMonth(),fecha.getFullYear());
+      $("body").append(`<button id="leer">Leer</button>`);
+      $("input").on("change",function(){
+          var alerta;
+          var valor=$(this).attr('id');
+          if(valor=="dia"){
+              alerta=initialize.getDia();
+          }
+          else if(valor=="mes"){
+              alerta=initialize.getMes();
+          }
+          else if(valor=="anio"){
+              alerta=initialize.getAnio();
+          }
+          $("button").click(function(){
+            alert(alerta);
+          });
+      });
+  </script>
+</body>
+</html>
